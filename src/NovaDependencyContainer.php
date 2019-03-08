@@ -78,6 +78,10 @@ class NovaDependencyContainer extends Field
                 $this->meta['dependencies'][$index]['satisfied'] = true;
             }
         }
+
+        foreach ($this->meta['fields'] as $field) {
+            $field->resolveForDisplay($resource);
+        }
     }
 
     /**
